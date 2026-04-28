@@ -1,0 +1,188 @@
+/* ===== NỀN RIÊNG CHO TRANG THƯ VIỆN ===== */
+
+body {
+  background: linear-gradient(135deg, #eef4ff, #f8fbff, #f1f6ff);
+
+  min-height: 100vh;
+}
+
+/* ===== HERO THƯ VIỆN ===== */
+
+.hero-library {
+  padding-top: 120px;
+  padding-bottom: 50px;
+
+  text-align: center;
+}
+
+.hero-library h1 {
+  color: #1f2d3d;
+  font-weight: 700;
+}
+
+.hero-library p {
+  color: #5a6b7b;
+  font-size: 18px;
+}
+
+/* ===== SEARCH BOX ===== */
+
+.library-search {
+  max-width: 700px;
+  margin: auto;
+}
+
+.library-search input {
+  height: 55px;
+
+  border-radius: 12px;
+
+  border: 1px solid #dfe6f3;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.library-search input:focus {
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+  border-color: #0d6efd;
+}
+
+/* ===== CARD TÀI LIỆU ===== */
+
+.library-card {
+  border-radius: 14px;
+
+  transition: all 0.3s;
+}
+
+.library-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== TIÊU ĐỀ MỤC ===== */
+
+.library-title {
+  text-align: center;
+
+  font-weight: 700;
+
+  color: #1f2d3d;
+
+  margin-bottom: 30px;
+}
+.lead {
+  font-weight: 700;
+  font-size: calc(1.3rem + 0.6vw);
+  color: #1f2d3d;
+}
+.hover-card {
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    border-color 0.3s;
+  border: 1px solid transparent;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-color: #0d6efd;
+}
+/* ── Thanh tìm kiếm (thư viện) ── */
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1.5px solid #dee2e6;
+
+  border-radius: 50px;
+
+  overflow: hidden;
+
+  transition: all 0.25s ease;
+
+  max-width: 450px;
+
+  width: 100%;
+
+  margin: auto;
+}
+
+/* khi focus */
+
+.search-wrapper:focus-within {
+  border-color: #0d6efd;
+
+  box-shadow: 0 5px 18px rgba(13, 110, 253, 0.15);
+}
+
+/* input */
+
+.search-input {
+  flex: 1;
+
+  border: none;
+
+  background: transparent;
+
+  padding: 12px 18px;
+
+  font-size: 15px;
+
+  color: #333;
+
+  outline: none;
+}
+
+/* placeholder */
+
+.search-input::placeholder {
+  color: #9aa3ad;
+}
+
+/* nút tìm */
+
+.search-btn {
+  border: none;
+
+  background: #0d6efd;
+
+  color: white;
+
+  width: 44px;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  flex-shrink: 0;
+
+  transition: all 0.25s ease;
+}
+
+/* hover */
+
+.search-btn:hover {
+  background: #0b5ed7;
+
+  transform: scale(1.05);
+}
+
+/* click */
+
+.search-btn:active {
+  transform: scale(0.95);
+}

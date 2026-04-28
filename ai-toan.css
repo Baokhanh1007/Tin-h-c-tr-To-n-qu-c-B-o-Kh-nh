@@ -1,0 +1,95 @@
+body {
+    background: linear-gradient(135deg, #e0f7ff, #ffffff);
+    font-family: "Segoe UI", sans-serif;
+}
+
+.header-title {
+    font-weight: 700;
+    font-size: 3rem;
+    color: #0d6efd;
+}
+
+.intro-text {
+    font-size: 1.25rem;
+    color: #444;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+}
+
+.feature-img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.feature-img:hover {
+    transform: scale(1.05);
+}
+
+.hero {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero-img {
+    width: 170px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* ANIMATIONS */
+.fade-in {
+    animation: fadeIn 1.2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+    animation: slideUp 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.btn-back {
+    margin-top: 45px;
+}
+/* Card bằng nhau */
+.feature-card{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+/* Khung ảnh cố định */
+.feature-img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}

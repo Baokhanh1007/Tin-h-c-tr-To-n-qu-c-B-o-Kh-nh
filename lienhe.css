@@ -1,0 +1,354 @@
+/* ============================================================
+   lienhe.css — Trang Liên hệ & Góp ý
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: #f4f6fb;
+  padding-top: 56px;
+}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.lh-hero {
+  position: relative;
+  padding: 80px 0 60px;
+  overflow: hidden;
+}
+
+.lh-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  z-index: 0;
+}
+
+/* Animated blobs */
+.lh-hero-bg::before,
+.lh-hero-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: .15;
+  animation: blobMove 8s ease-in-out infinite alternate;
+}
+.lh-hero-bg::before {
+  width: 400px; height: 400px;
+  background: #00c6ff;
+  top: -100px; left: -80px;
+}
+.lh-hero-bg::after {
+  width: 300px; height: 300px;
+  background: #0072ff;
+  bottom: -80px; right: -60px;
+  animation-delay: -4s;
+}
+
+@keyframes blobMove {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.15); }
+}
+
+.lh-hero > .container { position: relative; z-index: 1; }
+
+.lh-hero-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  color: #63d4ff;
+  display: inline-block;
+}
+
+.animate-bounce {
+  animation: heroBounce 2.4s ease-in-out infinite;
+}
+@keyframes heroBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.lh-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 12px;
+  letter-spacing: -.5px;
+}
+
+.lh-hero-sub {
+  font-size: 1.05rem;
+  opacity: .85;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── SECTION ─────────────────────────────────────────────── */
+.lh-section {
+  padding: 60px 0 80px;
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.lh-card {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,.10);
+}
+
+/* ── LEFT (form) ─────────────────────────────────────────── */
+.lh-left {
+  flex: 1;
+  padding: 48px 44px;
+}
+
+.lh-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+.lh-form-sub {
+  color: #6b7280;
+  font-size: .95rem;
+  margin-bottom: 28px;
+}
+
+/* Input wrapper */
+.lh-input-wrap {
+  position: relative;
+}
+.lh-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: .9rem;
+  pointer-events: none;
+  transition: color .2s;
+}
+.lh-input {
+  width: 100%;
+  padding: 12px 14px 12px 38px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .93rem;
+  color: #1f2937;
+  background: #fafafa;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  outline: none;
+}
+.lh-input:focus {
+  border-color: #0d6efd;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(13,110,253,.12);
+}
+.lh-input:focus ~ .lh-input-icon,
+.lh-input-wrap:focus-within .lh-input-icon {
+  color: #0d6efd;
+}
+.lh-input.is-invalid { border-color: #dc3545; }
+
+/* Label */
+.lh-label {
+  font-weight: 600;
+  font-size: .9rem;
+  color: #374151;
+}
+
+/* Checkbox grid */
+.lh-checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.lh-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: .88rem;
+  color: #374151;
+  padding: 10px 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  transition: border-color .2s, background .2s;
+  user-select: none;
+}
+.lh-checkbox-item:hover {
+  border-color: #0d6efd;
+  background: #f0f6ff;
+}
+.lh-checkbox-item input[type="checkbox"] {
+  display: none;
+}
+.lh-check-box {
+  width: 18px; height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 5px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, border-color .2s;
+  position: relative;
+}
+.lh-checkbox-item input:checked ~ .lh-check-box {
+  background: #0d6efd;
+  border-color: #0d6efd;
+}
+.lh-checkbox-item input:checked ~ .lh-check-box::after {
+  content: '';
+  width: 5px; height: 9px;
+  border: 2px solid #fff;
+  border-top: none; border-left: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+  display: block;
+}
+.lh-checkbox-item input:checked ~ .lh-check-box ~ span {
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+/* Textarea */
+.lh-textarea-wrap { position: relative; }
+.lh-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .93rem;
+  color: #1f2937;
+  background: #fafafa;
+  resize: vertical;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.lh-textarea:focus {
+  border-color: #0d6efd;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(13,110,253,.12);
+}
+
+/* Submit button */
+.lh-btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, opacity .2s;
+  box-shadow: 0 4px 16px rgba(13,110,253,.3);
+}
+.lh-btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13,110,253,.4);
+}
+.lh-btn-submit:active:not(:disabled) { transform: translateY(0); }
+.lh-btn-submit:disabled { opacity: .7; cursor: not-allowed; }
+
+/* Form message */
+.lh-form-msg {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: .9rem;
+  font-weight: 500;
+}
+.lh-form-msg.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+.lh-form-msg.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* ── RIGHT (info) ─────────────────────────────────────────── */
+.lh-right {
+  width: 300px;
+  background: linear-gradient(160deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lh-info-block {
+  position: relative;
+  z-index: 1;
+  animation: fadeSlideIn .6s ease both;
+}
+.lh-info-block:nth-child(2) { animation-delay: .15s; }
+.lh-info-block:nth-child(3) { animation-delay: .30s; }
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.lh-info-icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.12);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: #63d4ff;
+  margin-bottom: 10px;
+}
+.lh-info-block h4 {
+  color: #fff;
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.lh-info-block p {
+  color: rgba(255,255,255,.65);
+  font-size: .83rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Decorative circles */
+.lh-deco-circles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.deco-c {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.08);
+}
+.c1 { width: 200px; height: 200px; bottom: -60px; right: -60px; }
+.c2 { width: 120px; height: 120px; bottom: 30px; right: 10px; }
+.c3 { width: 60px;  height: 60px;  top: 40px; right: -20px; }
+
+/* ── Reveal animation ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: revealUp .7s ease forwards;
+}
+@keyframes revealUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .lh-card { flex-direction: column; }
+  .lh-right { width: 100%; flex-direction: row; flex-wrap: wrap; gap: 16px; padding: 32px 24px; }
+  .lh-info-block { flex: 1; min-width: 200px; }
+}
+@media (max-width: 600px) {
+  .lh-left { padding: 32px 20px; }
+  .lh-checkbox-grid { grid-template-columns: 1fr; }
+}

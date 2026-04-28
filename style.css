@@ -1,0 +1,122 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero {
+  height: 100vh;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Di chuyển */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hover-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.hover-card {
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  border: 1px solid transparent;
+}
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  border-color: #0d6efd;
+}
+.video-background{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.fw-bold{
+  color: white;
+} 
+.Gioi-thieu{
+  color: white
+}
+#Use{
+  color: black;
+}
+/* HERO POSITION */
+.hero{
+  position: relative;
+  height: 100vh;
+}
+
+/* VIDEO BACKGROUND */
+.video-background{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  z-index:-1;
+}
+
+/* VIDEO FULLSCREEN */
+.video-background video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* OVERLAY MỜ */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
+
+/* TEXT SHADOW */
+.hero h1, .hero p{
+  text-shadow:0 5px 20px rgba(0,0,0,0.8);
+}
+
+/* NAVBAR SCROLL EFFECT */
+.navbar{
+  transition: all 0.3s;
+}
+
+.navbar.scrolled{
+  background:rgba(0,0,0,0.9) !important;
+  box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* REVEAL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}

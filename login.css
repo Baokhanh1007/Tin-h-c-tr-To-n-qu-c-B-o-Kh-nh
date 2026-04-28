@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated blobs — giống lienhe.css */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: .15;
+  animation: blobMove 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+body::before {
+  width: 400px; height: 400px;
+  background: #00c6ff;
+  top: -100px; left: -80px;
+}
+body::after {
+  width: 300px; height: 300px;
+  background: #0072ff;
+  bottom: -80px; right: -60px;
+  animation-delay: -4s;
+}
+
+@keyframes blobMove {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.15); }
+}
+
+/* ── CARD ──────────────────────────────────────────────────── */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 420px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, .18);
+  animation: fadeSlideIn .7s ease both;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 28px 32px 24px;
+  background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+  letter-spacing: .5px;
+}
+
+/* ── FORM AREA ──────────────────────────────────────────────── */
+#login-form,
+#register-form {
+  padding: 32px 36px 36px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 6px;
+}
+
+.form-sub {
+  color: #6b7280;
+  font-size: .88rem;
+  margin: 0 0 24px;
+}
+
+/* ── LABEL ──────────────────────────────────────────────────── */
+label {
+  display: block;
+  font-weight: 600;
+  font-size: .88rem;
+  color: #374151;
+  margin: 14px 0 5px;
+}
+
+label:first-of-type { margin-top: 0; }
+
+/* ── INPUT ──────────────────────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .93rem;
+  color: #1f2937;
+  background: #fafafa;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  display: block;
+  margin: 0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #0d6efd;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, .12);
+}
+
+/* ── BUTTON ─────────────────────────────────────────────────── */
+button[type="submit"] {
+  width: 100%;
+  padding: 13px;
+  margin-top: 22px;
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: .98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, opacity .2s;
+  box-shadow: 0 4px 16px rgba(13, 110, 253, .3);
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 110, 253, .4);
+}
+
+button[type="submit"]:active { transform: translateY(0); }
+
+/* ── SWITCH LINK ────────────────────────────────────────────── */
+p {
+  text-align: center;
+  margin: 16px 0 0;
+  font-size: .88rem;
+  color: #6b7280;
+}
+
+a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover { text-decoration: underline; }
+
+/* ── DECORATIVE CIRCLES (góc phải dưới card) ─────────────── */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(13, 110, 253, .08);
+  bottom: -40px; right: -40px;
+  pointer-events: none;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .container { width: 94%; }
+  #login-form, #register-form { padding: 24px 20px 28px; }
+}
